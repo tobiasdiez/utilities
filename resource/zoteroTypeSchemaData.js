@@ -1,4 +1,4 @@
-var ZOTERO_TYPE_SCHEMA = {
+export const ZOTERO_TYPE_SCHEMA = {
 	"itemTypes": {
 		"1": [
 			"note",

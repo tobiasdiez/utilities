@@ -1874,15 +1874,17 @@ var Utilities = {
 }
 
 if (!Utilities.XRegExp) {
-	if (typeof module != 'undefined') {
+	if (typeof module === 'object' && module.exports) {
 		Utilities.XRegExp = require('./xregexp-all');
 	}
 }
 
-if (typeof module != 'undefined') {
-	module.exports = Utilities;
-} else if (typeof Zotero != 'undefined') {
+if (typeof Zotero != 'undefined') {
 	Zotero.Utilities = Utilities;
+}
+
+if (typeof module === 'object' && module.exports) {
+	module.exports = Utilities;
 }
 
 })();

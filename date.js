@@ -949,10 +949,12 @@ var Utilities_Date = new function(){
 	}
 }
 
-if (typeof module != 'undefined') {
-	module.exports = Utilities_Date;
-} else if (typeof Zotero != 'undefined') {
+if (typeof Zotero != 'undefined') {
 	Zotero.Date = Utilities_Date;
+}
+
+if (typeof module === 'object' && module.exports) {
+	module.exports = Utilities_Date;
 }
 
 })();

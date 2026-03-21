@@ -185,9 +185,12 @@ var CachedTypes = new function() {
 		};
 	})();
 }
-if (typeof module !== 'undefined') {
-	module.exports = CachedTypes
-} else if (typeof Zotero !== 'undefined') {
+
+if (typeof Zotero !== 'undefined') {
 	Object.assign(Zotero, CachedTypes);
+}
+
+if (typeof module === 'object' && module.exports) {
+	module.exports = CachedTypes
 }
 })();

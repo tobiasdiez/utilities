@@ -58,8 +58,10 @@ const Schema = {
 	}
 };
 
-if (typeof module != 'undefined') {
-	module.exports = Schema;
-} else if (typeof Zotero != 'undefined') {
+if (typeof Zotero != 'undefined') {
 	Zotero.Schema = Schema;
+}
+
+if (typeof module === 'object' && module.exports) {
+	module.exports = Schema;
 }

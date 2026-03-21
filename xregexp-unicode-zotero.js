@@ -51,7 +51,7 @@ if (typeof XRegExp != 'undefined') {
 else if (typeof Zotero != 'undefined' && Zotero.Utilities && Zotero.Utilities.XRegExp) {
     addZoteroUnicodeData(Zotero.Utilities.XRegExp)
 }
-if (typeof module != 'undefined') {
+if (typeof module === 'object' && module.exports) {
     module.exports = addZoteroUnicodeData;
 }
 

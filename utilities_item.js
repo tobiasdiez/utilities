@@ -1140,12 +1140,12 @@ var Utilities_Item = {
 	}
 }
 
-if (typeof module != 'undefined') {
-	module.exports = Utilities_Item;
-} else if (typeof Zotero != 'undefined' && typeof Zotero.Utilities != 'undefined') {
+if (typeof Zotero != 'undefined' && typeof Zotero.Utilities != 'undefined') {
 	Zotero.Utilities.Item = Utilities_Item;
-} else {
-	console.log('Could not find a way to expose utilities_item.js. Check your load order.')
+}
+
+if (typeof module === 'object' && module.exports) {
+	module.exports = Utilities_Item;
 }
 
 })();

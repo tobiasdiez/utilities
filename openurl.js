@@ -449,10 +449,12 @@ var OpenURL = new function() {
 	}
 }
 
-if (typeof module != 'undefined') {
-	module.exports = OpenURL;
-} else if (typeof Zotero != 'undefined') {
+if (typeof Zotero != 'undefined') {
 	Zotero.OpenURL = OpenURL;
+}
+
+if (typeof module === 'object' && module.exports) {
+	module.exports = OpenURL;
 }
 
 })();

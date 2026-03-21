@@ -2298,6 +2298,6 @@ export const ZOTERO_TYPE_SCHEMA = {
 	}
 };
 
-if (typeof module !== 'undefined') {
+if (typeof module === 'object' && module.exports) {
 	module.exports = ZOTERO_TYPE_SCHEMA;
 }

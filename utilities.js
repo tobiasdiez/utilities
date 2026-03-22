@@ -1861,18 +1861,6 @@ var Utilities = {
 		}
 		return root.innerHTML;
 	},
-
-	// /**
-	//  * Provides unicode support and other additional features for regular expressions
-	//  * See https://github.com/slevithan/xregexp for usage
-	//  */
-	XRegExp: typeof XRegExp !== "undefined" ? XRegExp : null
-}
-
-if (!Utilities.XRegExp) {
-	if (typeof module === 'object' && module.exports) {
-		Utilities.XRegExp = require('./xregexp-all');
-	}
 }
 
 if (typeof Zotero != 'undefined') {

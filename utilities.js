@@ -709,9 +709,12 @@ var Utilities = {
 				node.innerHTML = str;
 				return node.textContent.replace(/ {2,}/g, " ");
 			} else if(Zotero.isNode) {
+				/*
 				let {JSDOM} = require('jsdom');
 				let document = (new JSDOM(str)).window.document;
 				return document.documentElement.textContent.replace(/ {2,}/g, " ");
+				*/
+				throw new Error("Zotero.Utilities.unescapeHTML() is not supported in Node.js environment");
 			} else {
 				if(!node) node = document.createElement("div");
 				node.innerHTML = str;
@@ -1839,8 +1842,11 @@ var Utilities = {
 		let wrappedNote = '<div id="note-body">' + note + '</div>';
 		let doc;
 		if (Zotero.isNode) {
+			/*
 			let { JSDOM } = require('jsdom');
 			doc = new JSDOM(wrappedNote).window.document;
+			*/
+			throw new Error("Zotero.Utilities.walkNoteDOM() is not currently supported in Node.js");
 		}
 		else {
 			let parser;
